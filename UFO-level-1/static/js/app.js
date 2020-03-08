@@ -29,6 +29,13 @@ button.on("click", function() {
 
     console.log(filteredData);
 
+    // Clear the table
+    var table = document.getElementById("ufo-table");
+    //or use :  var table = document.all.tableid;
+    for (var i = table.rows.length - 1; i > 0; i--) {
+        table.deleteRow(i);
+    }
+
     // Set the span tag in the h1 element to the text
     // that was entered in the form
     filteredData.forEach((citingUfo) => {
