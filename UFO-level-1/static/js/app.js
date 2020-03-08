@@ -20,7 +20,14 @@ button.on("click", function() {
 
     console.log(inputValue);
 
-    var filteredData = tableData.filter(citing => citing.datetime === inputValue);
+    // Check if Input value is not passed yet
+    if (inputValue == "") {
+        var filteredData = tableData;
+    } else {
+        var filteredData = tableData.filter(citing => citing.datetime === inputValue);
+    }
+
+    console.log(filteredData);
 
     // Set the span tag in the h1 element to the text
     // that was entered in the form
